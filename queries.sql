@@ -17,9 +17,11 @@ ROLLBACK;
 
 UPDATE animals 
 SET species = 'digimon'
-WHERE '%mon';
+WHERE name LIKE '%mon';
 
 UPDATE animals
 SET species = 'pokemon'
-WHERE species = NULL;
+WHERE species IS NULL;
+
+SELECT * From animals;
 
