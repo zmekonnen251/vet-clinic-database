@@ -2,6 +2,10 @@
 DROP TABLE IF EXISTS animals;
 DROP TABLE IF EXISTS owners;
 DROP TABLE IF EXISTS species;
+DROP TABLE IF EXISTS vets;
+DROP TABLE IF EXISTS visits;
+DROP TABLE IF EXISTS specializations;
+
 
 CREATE TABLE owners(
     id SERIAL PRIMARY KEY,
@@ -31,4 +35,24 @@ CREATE TABLE animals (
         FOREIGN KEY(owner_id)
         REFERENCES owners(id)
         ON DELETE CASCADE
+);
+
+CREATE TABLE vets (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    age INT,
+    date_of_graduation DATE
+);
+
+CREATE TABLE specializations(
+    id SERIAL PRIMARY KEY,
+    vet_name VARCHAR(100),
+    speceis_name VARCHAR(100)
+);
+
+CREATE TABLE visits(
+   id SERIAL PRIMARY KEY,
+   vet_name VARCHAR(100),
+   animal_name VARCHAR(100),
+   date_of_visit DATE
 );
