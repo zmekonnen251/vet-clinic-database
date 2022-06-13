@@ -36,29 +36,36 @@ VALUES('William Tatcher','Pokemon'),
       ('Stephanie Mendez','Pokemon'),
       ('Jack Harkness','Digimon');
 
-INSERT INTO visits (animal_name,vet_name,date_of_visit)
-VALUES('Agumon','William Tatcher','2020-05-24'),
-      ('Agumon','William Tatcher','2020-05-24'),
-      ('Agumon','Stephanie Mendez','2020-07-22'),
-      ('Gabumon','Jack Harkness','2021-02-02'),
-      ('Pikachu','Maisy Smith','2020-03-08'),
-      ('Pikachu','Maisy Smith','2020-05-24'),
-      ('Pikachu','Maisy Smith','2020-05-14'),
-      ('Devimon','Stephanie Mendez','2021-05-04'),
-      ('Charmander','Jack Harkness','2021-05-24'),
-      ('Plantmon','Maisy Smith','2019-11-21'),
-      ('Plantmon','William Tatcher','2020-08-10'),
-      ('Plantmon','William Tatcher','2021-04-07'),
-      ('Squirtle','Stephanie Mendez','2019-09-29'),
-      ('Angemon','Jack Harkness','2020-10-03'),
-      ('Angemon','Jack Harkness','2020-11-04'),
-      ('Boarmon','Maisy Smith','2019-01-24'),
-      ('Boarmon','Maisy Smith','2019-05-15'),
-      ('Boarmon','Maisy Smith','2020-02-27'),
-      ('Boarmon','Maisy Smith','2020-08-03'),
-      ('Blossom','Stephanie Mendez','2020-05-24'),
-      ('Blossom','William Tatcher','2021-01-11');
+INSERT INTO visits (animal_id,vet_id,date_of_visit)
+VALUES('1',1,'2020-05-24'),
+      ('1',1,'2020-05-24'),
+      ('1',3,'2020-07-22'),
+      ('2',4,'2021-02-02'),
+      ('3',2,'2020-03-08'),
+      ('3',2,'2020-05-24'),
+      ('3',2,'2020-05-14'),
+      ('4',3,'2021-05-04'),
+      ('5',4,'2021-05-24'),
+      ('6',2,'2019-11-21'),
+      ('6',1,'2020-08-10'),
+      ('6',1,'2021-04-07'),
+      ('7',3,'2019-09-29'),
+      ('8',4,'2020-10-03'),
+      ('8',4,'2020-11-04'),
+      ('9',2,'2019-01-24'),
+      ('9',2,'2019-05-15'),
+      ('9',2,'2020-02-27'),
+      ('9',2,'2020-08-03'),
+      ('10',3,'2020-05-24'),
+      ('10',1,'2021-01-11');
 
+-- DAY 5
+
+-- This will add 3.594.280 visits considering you have 10 animals, 4 vets, and it will use around ~87.000 timestamps (~4min approx.)
+INSERT INTO visits (animal_id, vet_id, date_of_visit) SELECT * FROM (SELECT id FROM animals) animal_ids, (SELECT id FROM vets) vets_ids, generate_series('1980-01-01'::timestamp, '2021-01-01', '4 hours') visit_timestamp;
+
+-- This will add 2.500.000 owners with full_name = 'Owner <X>' and email = 'owner_<X>@email.com' (~2min approx.)
+insert into owners (full_name, email) select 'Owner ' || generate_series(1,2500000), 'owner_' || generate_series(1,2500000) || '@mail.com';
 
 
 
