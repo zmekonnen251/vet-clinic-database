@@ -252,6 +252,10 @@ WHERE visits.vet_name = 'Maisy Smith'
 GROUP BY species.name
 ORDER BY COUNT DESC LIMIT 1;
 
+-- Day 5 (Performace audit)
+
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
 
 
 

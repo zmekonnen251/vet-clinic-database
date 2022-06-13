@@ -52,7 +52,7 @@ CREATE TABLE specializations(
 
 CREATE TABLE visits(
    id SERIAL PRIMARY KEY,
-   vet_name VARCHAR(100),
-   animal_name VARCHAR(100),
+   vet_id INT,
+   animal_id INT,
    date_of_visit DATE
 );
