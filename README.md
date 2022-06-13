@@ -1,6 +1,6 @@
 # Vet clinic database: create animals table
 
-> In this project I used a relational database to create the initial data structure for a vet clinic. I created a table to store animals' information, insert some data into it, and query it.
+> In this project we will optimized some slow queries in our database.
 
 ## Getting Started
 
@@ -17,6 +17,18 @@ This repository includes files with plain SQL that can be used to recreate a dat
 - GitHub: [GitHub](https://github.com/zmekonnen251)
 - Twitter: [Twitter](https://twitter.com/mek_zela)
 - LinkedIn: [Zelalem G. Mekonnen](https://www.linkedin.com/in/zelalem-getachew/)
+
+👤 **Eshetu Melaku**
+
+- GitHub: [@Melaku05](https://github.com/Melaku05)
+- Twitter: [@Melaku05](https://twitter.com/melaku)
+- LinkedIn: [melaku-eshetu](https://www.linkedin.com/in/melaku-eshetu/)
+
+👤 **Sodiq Aderibigbe**
+
+- GitHub: [@deyemiobaa](https://github.com/deyemiobaa)
+- Twitter: [@deyemiobaa](https://twitter.com/deyemiobaa)
+- LinkedIn: [Sodiq Aderibigbe](https://linkedin.com/in/sodiqa)
 
 ## 🤝 Contributing
 
