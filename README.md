@@ -1,6 +1,6 @@
 # Vet clinic database: create animals table
 
-> In this project we will optimized some slow queries in our database.
+> In this project we optimized some slow queries in our database.
 
 ## Getting Started
 
