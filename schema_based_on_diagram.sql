@@ -14,6 +14,8 @@ CREATE TABLE invoices{
   medical_histories(id)
 }
 
+CREATE INDEX idx_medical_history_id ON invoices(medical_histories_id ASC);
+
 CREATE TABLE invoice_items{
   id SERIAL PRIMARY KEY ,
   unit_price REAL,
@@ -26,6 +28,9 @@ CREATE TABLE invoice_items{
   FOREIGN KEY(treatment_id) REFERENCES
   treatments(id)
 }
+
+CREATE INDEX idx_invoice_id ON invoice_items(inovice_id ASC);
+CREATE INDEX idx_treatment_id ON invoice_items(treatment_id DESC);
 
 CREATE TABLE treatments{
   id SERIAL PRIMARY KEY ,
