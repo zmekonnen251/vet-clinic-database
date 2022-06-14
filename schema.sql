@@ -37,6 +37,10 @@ CREATE TABLE animals (
         ON DELETE CASCADE
 );
 
+CREATE INDEX idx_owner_in ON animals(owner_id ASC);
+CREATE INDEX idx_species_id ON animals(species_id DESC);
+
+
 CREATE TABLE vets (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100),
@@ -45,17 +49,27 @@ CREATE TABLE vets (
 );
 
 CREATE TABLE specializations(
-    id SERIAL PRIMARY KEY,
-    vet_name VARCHAR(100),
-    speceis_name VARCHAR(100)
+    vet_id INT,
+    speceis_id INT,
+    PRIMARY KEY (vet_id,speceis_id),
+    FOREIGN KEY (vet_id) REFERENCES vets (id) ON DELETE CASCADE,
+    FOREIGN KEY (speceis_id) REFERENCES species (id) ON DELETE CASCADE
 );
 
+CREATE INDEX idx_vets_id ON specializations(vet_id,ASC);
+CREATE INDEX idx_species_id ON specializations(species_id,DESC);
+
 CREATE TABLE visits(
-   id SERIAL PRIMARY KEY,
    vet_id INT,
    animal_id INT,
-   date_of_visit DATE
+   date_of_visit DATE,
+   PRIMARY KEY (vet_id,animal_id),
+   FOREIGN KEY (animal_id) REFERENCES animals(id) ON DELETE CASCADE,
+   FOREIGN KEY (vet_id) REFERENCES vets(id) ON DELETE CASCADE
 );
+
+CREATE INDEX idx_visits_animal_id ON visits(animal_id ASC);
+CREATE INDEX idx_visits_vets_id ON visits(vets_id DESC);
 
 -- DAY 5
 
