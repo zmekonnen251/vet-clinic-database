@@ -2,6 +2,10 @@
 
 > In this project we optimized some slow queries in our database.
 
+### Schema Diagram
+
+<img src="drawSQL-export-2022-06-14_11_21.png">
+
 ## Getting Started
 
 This repository includes files with plain SQL that can be used to recreate a database:
